@@ -12,6 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
+import com.sun.xml.internal.bind.v2.runtime.output.Encoded;
 import com.xxx.pojo.Log;
 import com.xxx.service.LogService;
 
@@ -35,7 +36,9 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 		Log log = new Log();
 		log.setUserid(logService.loginUserId());//设置管理员id
 		log.setCreatedate(new Date());//操作时间
-		log.setContent("管理员 " + userDetails.getUsername());//操作内容
+		String a = "";
+		
+		log.setContent(new String(("管理员" + userDetails.getUsername()).getBytes("GBK"), "utf-8"));//操作内容
 		log.setOperation("登录");//操作
 		
 		logService.log(log);//添加日志

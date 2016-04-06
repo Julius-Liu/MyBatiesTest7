@@ -3,7 +3,6 @@ package com.xxx.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
-
 /**
  * 日志记录POJO
  * @author HotStrong

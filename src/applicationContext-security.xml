@@ -9,10 +9,13 @@
 	<http >
 		<!-- 不拦截login.jsp -->
 		<intercept-url pattern="/login.jsp*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+		
 		<!--仅拦截到manager下面的内容-->
 		<intercept-url pattern="/manager/**" access="ROLE_ADMIN,ROLE_UPDATE_FILM,ROLE_DELETE_FILM,ROLE_ADD_FILM" />
+		
 		<!-- 设置登录过滤器 -->
 		<custom-filter before="FORM_LOGIN_FILTER" ref="authenticationProcessingFilter" />
+		
 		<!-- 登录表单设置 -->
 		<form-login login-page="/login.jsp"
 			default-target-url="/manager/films.jsp"
