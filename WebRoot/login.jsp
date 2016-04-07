@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <% 
@@ -18,9 +17,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 		<!-- 登录失败后，显示之前的登录名 -->
 		用户名：<input type='text' name='j_username' class="txtinput"
-		value='<c:if test="${not empty param.login_error}" >
-		<c:out value="${SPRING_SECURITY_LAST_USERNAME}"/></c:if>' />
+			value='<c:if test="${not empty param.login_error}" >
+			<c:out value="${SPRING_SECURITY_LAST_USERNAME}"/></c:if>' />
 		<br />
+		
 		密码：<input type='password' name='j_password' class="txtinput" />
 		<br />
 		

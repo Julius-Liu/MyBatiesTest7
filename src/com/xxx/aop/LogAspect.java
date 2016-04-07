@@ -22,8 +22,7 @@ import com.xxx.service.LogService;
  * 
  */
 @Aspect
-public class LogAspect {
-	
+public class LogAspect {	
 	@Autowired
 	private LogService logService;
 	
@@ -57,25 +56,25 @@ public class LogAspect {
 	@AfterReturning(value="insertServiceCall()", argNames="rtv", returning="rtv")
     public void insertServiceCallCalls(JoinPoint joinPoint, Object rtv) throws Throwable{
 		
-		//获取登录管理员id
+		// 获取登录管理员id
 		Long adminUserId = logService.loginUserId();
 		
-		if(adminUserId == null){//没有管理员登录
+		if(adminUserId == null){	// 没有管理员登录
 			return;
 		}
 		
-		//判断参数
-		if(joinPoint.getArgs() == null){//没有参数
+		// 判断参数
+		if(joinPoint.getArgs() == null){	// 没有参数
 			return;
 		}
 		
-		//获取方法名
+		// 获取方法名
 		String methodName = joinPoint.getSignature().getName();
 		
-		//获取操作内容
+		// 获取操作内容
 		String opContent = adminOptionContent(joinPoint.getArgs(), methodName);
 		
-		//创建日志对象
+		// 创建日志对象
 		Log log = new Log();
 		log.setUserid(logService.loginUserId());//设置管理员id
 		log.setCreatedate(new Date());//操作时间

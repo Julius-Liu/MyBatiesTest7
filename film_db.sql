@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : local3309
-Source Server Version : 50517
+Source Server Version : 50528
 Source Host           : localhost:3309
 Source Database       : film_db
 
 Target Server Type    : MYSQL
-Target Server Version : 50517
+Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2016-04-06 23:04:58
+Date: 2016-04-07 17:41:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,13 +24,18 @@ CREATE TABLE `film` (
   `fname` varchar(255) DEFAULT NULL COMMENT '影片名称',
   `orderKey` int(11) DEFAULT NULL COMMENT '排序的值',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of film
 -- ----------------------------
 INSERT INTO `film` VALUES ('1', '新龙门客栈', '1');
 INSERT INTO `film` VALUES ('2', '人间师格', '2');
+INSERT INTO `film` VALUES ('3', '?????', null);
+INSERT INTO `film` VALUES ('4', '彗星来的那一夜', null);
+INSERT INTO `film` VALUES ('5', '盲井', null);
+INSERT INTO `film` VALUES ('6', '?', null);
+INSERT INTO `film` VALUES ('7', '港囧', null);
 
 -- ----------------------------
 -- Table structure for `t_admin`
@@ -115,13 +120,23 @@ CREATE TABLE `t_log` (
   `content` varchar(8000) NOT NULL DEFAULT '' COMMENT '日志内容',
   `operation` varchar(250) NOT NULL DEFAULT '' COMMENT '用户所做的操作',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_log
 -- ----------------------------
 INSERT INTO `t_log` VALUES ('4', '3', '2016-04-06 23:01:17', '?Julius', '??');
 INSERT INTO `t_log` VALUES ('5', '3', '2016-04-06 23:04:26', '?Julius', '??');
+INSERT INTO `t_log` VALUES ('6', '3', '2016-04-07 09:57:12', '?Julius', '??');
+INSERT INTO `t_log` VALUES ('7', '3', '2016-04-07 10:00:59', 'insertFilm[??1????Film???(getFname : ?????)]', '??');
+INSERT INTO `t_log` VALUES ('8', '3', '2016-04-07 11:02:48', '管理员Julius', '登录');
+INSERT INTO `t_log` VALUES ('9', '3', '2016-04-07 11:03:08', 'insertFilm[参数1，类型：Film，值：(getFname : 彗星来的那一夜)]', '添加');
+INSERT INTO `t_log` VALUES ('10', '3', '2016-04-07 11:06:52', '管理员Julius', '登录');
+INSERT INTO `t_log` VALUES ('11', '3', '2016-04-07 11:07:09', 'insertFilm[参数1，类型：Film，值：(getFname : 盲井)]', '添加');
+INSERT INTO `t_log` VALUES ('12', '3', '2016-04-07 11:09:09', '???Julius', '??');
+INSERT INTO `t_log` VALUES ('13', '3', '2016-04-07 11:09:30', 'insertFilm[??1????Film???(getFname : ?)]', '??');
+INSERT INTO `t_log` VALUES ('14', '3', '2016-04-07 11:12:53', '管理员Julius', '登录');
+INSERT INTO `t_log` VALUES ('15', '3', '2016-04-07 11:13:12', 'insertFilm[参数1，类型：Film，值：(getFname : 港囧)]', '添加');
 
 -- ----------------------------
 -- Table structure for `t_role`

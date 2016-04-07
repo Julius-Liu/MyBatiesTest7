@@ -1,3 +1,6 @@
+
+<!-- 该文件主要是 myBatis 的配置 -->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -27,8 +30,7 @@
         <property name="maxIdleTime" value="${cpool.maxIdleTime}"/>
         <property name="acquireIncrement" value="${cpool.acquireIncrement}"/>
         <property name="maxIdleTimeExcessConnections" value="${cpool.maxIdleTimeExcessConnections}"/>
-    </bean>
-	 
+    </bean>	 
 	
 	<!-- transaction manager, use JtaTransactionManager for global tx -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

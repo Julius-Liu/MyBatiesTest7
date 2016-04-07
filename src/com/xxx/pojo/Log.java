@@ -94,34 +94,45 @@ public class Log extends BaseDomain implements Serializable{
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (!super.equals(obj))
+		}
+		if (!super.equals(obj)) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Log other = (Log) obj;
 		if (content == null) {
-			if (other.content != null)
+			if (other.content != null) {
 				return false;
-		} else if (!content.equals(other.content))
+			}
+		} else if (!content.equals(other.content)) {
 			return false;
+		}
 		if (createdate == null) {
-			if (other.createdate != null)
+			if (other.createdate != null) {
 				return false;
-		} else if (!createdate.equals(other.createdate))
+			}
+		} else if (!createdate.equals(other.createdate)) {
 			return false;
+		}
 		
 		if (operation == null) {
-			if (other.operation != null)
+			if (other.operation != null) {
 				return false;
-		} else if (!operation.equals(other.operation))
+			}
+		} else if (!operation.equals(other.operation)) {
 			return false;
+		}
 		if (userid == null) {
-			if (other.userid != null)
+			if (other.userid != null) {
 				return false;
-		} else if (!userid.equals(other.userid))
+			}
+		} else if (!userid.equals(other.userid)) {
 			return false;
+		}
 		return true;
 	}
 

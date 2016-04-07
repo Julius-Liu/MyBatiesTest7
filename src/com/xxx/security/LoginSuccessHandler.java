@@ -32,16 +32,15 @@ public class LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 		
 		UserDetails userDetails = (UserDetails)authentication.getPrincipal();
 		
-		//创建日志对象
+		// 创建日志对象
 		Log log = new Log();
-		log.setUserid(logService.loginUserId());//设置管理员id
-		log.setCreatedate(new Date());//操作时间
-		String a = "";
+		log.setUserid(logService.loginUserId());	// 设置管理员id
+		log.setCreatedate(new Date());				// 操作时间
 		
-		log.setContent(new String(("管理员" + userDetails.getUsername()).getBytes("GBK"), "utf-8"));//操作内容
-		log.setOperation("登录");//操作
+		log.setContent("管理员" + userDetails.getUsername());	// 操作内容
+		log.setOperation("登录");		// 操作
 		
-		logService.log(log);//添加日志
+		logService.log(log);	// 添加日志
 		
 		super.onAuthenticationSuccess(request, response, authentication);
 	}

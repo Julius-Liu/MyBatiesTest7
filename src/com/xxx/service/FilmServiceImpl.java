@@ -13,7 +13,7 @@ import com.xxx.pojo.Film;
  */
 public class FilmServiceImpl implements FilmService {
 	
-	//注入影片Mapper
+	// 注入影片Mapper
 	@Autowired
 	private FilmMapper mapper;
 	
