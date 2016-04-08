@@ -1,7 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!-- 授权处理模块的配置文件 -->
-
-<?xml version="1.0" encoding="UTF-8"?>
 
 <beans:beans xmlns="http://www.springframework.org/schema/security"
 	xmlns:b="http://www.springframework.org/schema/beans" xmlns:beans="http://www.springframework.org/schema/beans"
@@ -34,6 +33,7 @@
 		</session-management>		
 	</http>
 	
+	<!-- 授权的管理器 -->
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider>
 			<!-- 
